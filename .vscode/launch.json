@@ -1,0 +1,28 @@
+{
+  "version": "0.1.0",
+  "configurations": [
+    {
+      "name": "React: debug server-side",
+      "type": "node-terminal",
+      "request": "launch"
+    },
+    {
+      "name": "React: debug client-side",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:3000"
+    },
+    {
+      "name": "React: debug",
+      "type": "node-terminal",
+      "request": "launch",
+      "console": "integratedTerminal",
+      "serverReadyAction": {
+        "pattern": "started server on .+, url: (https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithChrome"
+      }
+    }
+  ],
+  "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"]
+}
