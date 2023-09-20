@@ -23,5 +23,6 @@
     "import/resolver": {
       "typescript": {}
     }
-  }
+  },
+  "ignorePatterns": ["commitlint.config.js"]
 }
