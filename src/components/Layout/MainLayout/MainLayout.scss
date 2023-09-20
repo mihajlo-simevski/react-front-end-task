@@ -1,0 +1,29 @@
+@use '../../../styles/partials/variables' as *;
+
+.MainLayout {
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+  background-color: #f7f8fa;
+
+  //extra large screens
+  @media screen and (#{$extra-large}) {
+    padding: 8rem;
+  }
+
+  //desktop
+  @media screen and (#{$desktop}) {
+    //padding: calc(77.5rem - 73.75rem);
+    padding: calc(124rem - 118rem);
+  }
+
+  //tablet
+  @media screen and (#{$tablet}) {
+    padding: calc(81rem - 74.9rem);
+  }
+
+  //mobile
+  @media screen and (#{$mobile}) {
+    padding: 0;
+  }
+}
