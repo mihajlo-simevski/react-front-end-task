@@ -1,8 +1,8 @@
-import "./App.scss";
-import MainLayout from "./components/Layout/MainLayout/MainLayout";
+import './App.scss';
+import MainLayout from './components/Layout/MainLayout/MainLayout';
 
 function App() {
-  return <MainLayout />
+  return <MainLayout />;
 }
 
 export default App;
