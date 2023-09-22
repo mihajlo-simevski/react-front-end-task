@@ -1,5 +1,10 @@
+import Header from '../../Header/Header';
 import './MainLayout.scss';
 
 export default function MainLayout() {
-  return <main className="MainLayout">MainLayout</main>;
+  return (
+    <section className="MainLayout">
+      <Header />
+    </section>
+  );
 }
