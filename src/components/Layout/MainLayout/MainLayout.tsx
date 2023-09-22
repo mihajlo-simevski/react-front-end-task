@@ -1,10 +1,10 @@
-import Header from '../../Header/Header';
+import { ReactNode } from 'react';
 import './MainLayout.scss';
 
-export default function MainLayout() {
-  return (
-    <section className="MainLayout">
-      <Header />
-    </section>
-  );
+type MainContentProps = {
+  children: ReactNode;
+};
+
+export default function MainLayout({ children }: MainContentProps) {
+  return <section className="MainLayout">{children}</section>;
 }
