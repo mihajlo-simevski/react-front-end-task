@@ -5,7 +5,6 @@
 
   .header-wrapper {
     display: flex;
-    height: 17.3rem;
     flex-direction: column;
     gap: 4rem;
     padding-top: 2rem;
@@ -25,11 +24,12 @@
     }
     .header-content-wrapper {
       border: 0.1rem solid $borderColor;
-      border-radius: 0.5rem;
+      border-radius: 0.5rem 0.5rem 0 0;
 
       @media screen and (#{$tablet-down}) {
         flex-direction: column;
         align-items: flex-start;
+        border-radius: 0.5rem;
       }
       .header-content {
         display: flex;
@@ -37,11 +37,13 @@
         align-items: center;
         padding: 3.1rem 3.3rem;
         background: #fff;
+        border-radius: 0.4rem 0.4rem 0 0;
 
         @media screen and (#{$tablet-down}) {
           flex-direction: column;
           align-items: flex-start;
           gap: 4rem;
+          border-radius: 0.4rem 0.4rem 0 0;
         }
 
         .header-title {
