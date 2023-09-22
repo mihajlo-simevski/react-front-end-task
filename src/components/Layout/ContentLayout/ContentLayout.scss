@@ -1,0 +1,7 @@
+@use '../../../styles/partials/variables' as *;
+
+.ContentLayout {
+  @media screen and (#{$tablet-up}) {
+    background: #fff;
+  }
+}

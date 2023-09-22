@@ -1,0 +1,61 @@
+@use '../../styles/partials/variables' as *;
+.SubjectCreator {
+  padding: 3rem 1.6rem;
+  border-left: 0.1rem solid $borderColor;
+  border-right: 0.1rem solid $borderColor;
+
+  .add-subject {
+    display: grid;
+    background: #fff;
+    border: 0.1rem dashed $borderColor;
+    border-radius: 0.5rem;
+
+    @media screen and (#{$tablet-up}) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (#{$tablet-down}) {
+      grid-template-rows: repeat(2, 1fr);
+      .time-wrapper .Button {
+        padding: 1rem;
+      }
+    }
+
+    .Button {
+      display: grid;
+      padding: 1rem;
+      justify-content: center;
+    }
+
+    .time-wrapper {
+      display: flex;
+      padding: 1rem 2rem;
+      align-items: center;
+      gap: 1rem;
+      color: #707070;
+
+      @media screen and (#{$tablet-down}) {
+        justify-content: center;
+        border-bottom: 0.1rem dashed $borderColor;
+      }
+
+      .time {
+        font-size: 1.8rem;
+        font-family: 'Lato', sans-serif;
+        font-weight: 700;
+      }
+
+      .time-divider {
+        width: 0.2rem;
+        height: 1.8rem;
+        background-color: #dfdfdf;
+      }
+
+      .time-gap {
+        font-size: 1.4rem;
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+      }
+    }
+  }
+}

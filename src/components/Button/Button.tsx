@@ -3,7 +3,7 @@ import './Button.scss';
 
 type ButtonProps = {
   children: ReactNode;
-  variant: 'primary';
+  variant: 'primary' | 'secondary';
   type: 'button' | 'submit' | 'reset';
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
