@@ -1,5 +1,6 @@
 import ChangeIcon from '../../assets/icons/change-icon.svg';
 import Button from '../Button/Button';
+import SwitchField from '../SwitchField/SwitchField';
 
 import './SubjectTemplate.scss';
 
@@ -17,6 +18,7 @@ export default function SubjectTemplate() {
             Change Subject Image
           </Button>
         </section>
+        <SwitchField />
       </div>
     </section>
   );
