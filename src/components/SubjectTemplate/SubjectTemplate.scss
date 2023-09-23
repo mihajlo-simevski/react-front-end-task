@@ -1,0 +1,57 @@
+@use '../../styles/partials/variables' as *;
+
+$background-image: url('../../assets/images/subject-cover.png');
+
+.SubjectTemplate {
+  display: flex;
+
+  padding: 3rem 3rem;
+  background: #fff;
+
+  @media screen and (#{$desktop-down}) {
+    justify-content: center;
+  }
+
+  .subject-theme-circle {
+    height: 1.8rem;
+    width: 1.8rem;
+    background-color: #000;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .subject-time {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #707070;
+    gap: 1rem;
+  }
+
+  .subject-cover {
+    width: 33rem;
+    height: 22rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-image: $background-image;
+
+    @media screen and (#{$tablet-up}) {
+      width: 64.1rem;
+      height: 22rem;
+    }
+
+    @media screen and (#{$desktop-up}) {
+      width: 36rem;
+      height: 23rem;
+    }
+  }
+
+  .Button {
+    align-self: flex-end;
+    padding: 1rem;
+  }
+}

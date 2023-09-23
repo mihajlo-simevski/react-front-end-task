@@ -1,5 +1,5 @@
 $mainLayoutPadding: 3.3rem;
-$borderColor: #F1F2F5;
+$borderColor: #f1f2f5;
 
 $mobile-width: 390px;
 $tablet-width: 810px;
@@ -8,6 +8,7 @@ $extra-large-width: 1241px;
 
 // mobile-first
 $tablet-up: 'min-width: #{$tablet-width}';
+$desktop-up: 'min-width: #{$desktop-width}';
 $extra-large: 'min-width: #{$extra-large-width}'; //Extra large devices (large desktops)
 
 // desktop first
