@@ -4,11 +4,14 @@ $background-image: url('../../assets/images/subject-cover.png');
 
 .SubjectTemplate {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 3rem 3rem;
   background: #fff;
 
-  @media screen and (#{$desktop-down}) {
-    justify-content: center;
+  @media screen and (#{$desktop-up}) {
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   .subject-theme-circle {
@@ -46,6 +49,49 @@ $background-image: url('../../assets/images/subject-cover.png');
     @media screen and (#{$desktop-up}) {
       width: 36rem;
       height: 23rem;
+    }
+  }
+
+  .content-wrapper {
+    padding: 3rem;
+    width: 100%;
+    max-width: 33rem;
+
+    .subject-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      figure {
+        figcaption {
+          padding-left: 2.4rem;
+          font-size: 1.3rem;
+          font-weight: 700;
+          color: #696e7c;
+        }
+        h1 {
+          font-family: 'Lato';
+          font-size: 2.4rem;
+          font-weight: 400;
+        }
+        div {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+      }
+
+      .option {
+        padding-top: 1.5rem;
+      }
+    }
+
+    @media screen and (#{$tablet-up}) {
+      max-width: 63rem;
+    }
+
+    @media screen and (#{$desktop-up}) {
+      max-width: 100%;
     }
   }
 

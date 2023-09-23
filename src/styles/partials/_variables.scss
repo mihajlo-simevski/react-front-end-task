@@ -7,6 +7,7 @@ $desktop-width: 1240px;
 $extra-large-width: 1241px;
 
 // mobile-first
+$mobile-up: 'min-width: #{$mobile-width}';
 $tablet-up: 'min-width: #{$tablet-width}';
 $desktop-up: 'min-width: #{$desktop-width}';
 $extra-large: 'min-width: #{$extra-large-width}'; //Extra large devices (large desktops)
