@@ -69,7 +69,7 @@ $background-image: url('../../assets/images/subject-cover.png');
           font-weight: 700;
           color: #696e7c;
         }
-        h1 {
+        h2 {
           font-family: 'Lato';
           font-size: 2.4rem;
           font-weight: 400;
@@ -83,6 +83,29 @@ $background-image: url('../../assets/images/subject-cover.png');
 
       .option {
         padding-top: 1.5rem;
+      }
+    }
+
+    .subject-time-range {
+      display: flex;
+      flex-direction: column;
+      padding-top: 3rem;
+
+      label {
+        font-size: 1.8rem;
+        font-weight: 700;
+        padding-left: 1.4rem;
+      }
+      :first-child,
+      :nth-child(2) {
+        flex: 1;
+        padding-bottom: 1rem;
+      }
+
+      @media screen and (#{$tablet-up}) {
+        gap: 4.2rem;
+        flex-direction: row;
+        justify-content: space-between;
       }
     }
 
