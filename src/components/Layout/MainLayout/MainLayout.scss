@@ -1,0 +1,24 @@
+@use '../../../styles/partials/variables' as *;
+
+$background-image: url('../../../assets/images/program-cover.png');
+
+.MainLayout {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: $desktop-width;
+  background-image: $background-image;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: auto 37.3rem;
+
+  @media screen and (#{$tablet-up}) {
+    padding: $mainLayoutPadding;
+  }
+
+  //mobile
+  @media screen and (#{$mobile-down}) {
+    padding: 0;
+  }
+}

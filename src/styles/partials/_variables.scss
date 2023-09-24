@@ -1,0 +1,18 @@
+$mainLayoutPadding: 3.3rem;
+$borderColor: #f1f2f5;
+
+$mobile-width: 390px;
+$tablet-width: 810px;
+$desktop-width: 1240px;
+$extra-large-width: 1241px;
+
+// mobile-first
+$mobile-up: 'min-width: #{$mobile-width}';
+$tablet-up: 'min-width: #{$tablet-width}';
+$desktop-up: 'min-width: #{$desktop-width}';
+$extra-large: 'min-width: #{$extra-large-width}'; //Extra large devices (large desktops)
+
+// desktop first
+$mobile-down: 'max-width: #{$mobile-width}'; //Small devices (phones)
+$tablet-down: 'max-width: #{$tablet-width}'; //Medium devices (tablets)
+$desktop-down: 'max-width: #{$desktop-width}'; //Large devices (desktops)

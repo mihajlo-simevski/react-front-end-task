@@ -1,0 +1,46 @@
+@use '../../styles/partials/variables' as *;
+
+.NavigationBar {
+  width: 100%;
+  border-top: 0.1rem solid #e0e2e8;
+  border-bottom: 0.1rem solid #e0e2e8;
+
+  @media screen and (#{$mobile-down}) {
+    border-radius: 0 0 5px 5px;
+  }
+
+  .navbar-list {
+    display: flex;
+    height: 5.2rem;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    list-style: none;
+
+    @media screen and (#{$mobile-down}) {
+      border-radius: 0 0 5px 5px;
+    }
+
+    .navbar-item {
+      text-decoration: none;
+      font-size: 1.8rem;
+      color: #555555;
+      cursor: pointer;
+    }
+
+    .navbar-item.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .navbar-item.active {
+      color: #175fff;
+      font-weight: 700;
+      padding: 1.65rem;
+      box-shadow: inset 0px -3px 0px #175fff;
+    }
+  }
+}

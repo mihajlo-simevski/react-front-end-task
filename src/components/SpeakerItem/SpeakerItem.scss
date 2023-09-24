@@ -1,0 +1,28 @@
+@use '../../styles/partials/variables' as *;
+
+.SpeakerItem {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 49%;
+  box-sizing: border-box;
+  padding: 1rem;
+  border: 0.1rem solid #e0e2e8;
+  border-radius: 0.5rem;
+
+  .speaker-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .speaker-edit {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  @media screen and (#{$tablet-down}) {
+    max-width: 31rem;
+  }
+}

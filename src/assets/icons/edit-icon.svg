@@ -1,0 +1,7 @@
+<svg id="Group_8" data-name="Group 8" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <circle id="Oval" cx="16" cy="16" r="16" fill="#eceef3"/>
+  <g id="edit" transform="translate(9 9)">
+    <path id="Path" d="M0,8.365V11.2H2.835L11.2,2.835,8.365,0Z" transform="translate(0 2.8)"/>
+    <path id="Path-2" data-name="Path" d="M4.434,2.088,2.579.232a.8.8,0,0,0-1.124,0L0,1.687l2.98,2.98L4.434,3.212A.8.8,0,0,0,4.434,2.088Z" transform="translate(9.333)"/>
+  </g>
+</svg>
