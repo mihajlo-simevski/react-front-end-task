@@ -4,6 +4,7 @@ import './SpeakerItem.scss';
 
 type SpeakerItemChildProps = {
   speaker: {
+    id: number;
     name: string;
     url: string;
   };

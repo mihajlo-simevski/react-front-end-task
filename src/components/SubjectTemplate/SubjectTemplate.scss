@@ -62,6 +62,11 @@ $background-image: url('../../assets/images/subject-cover.png');
       align-items: center;
       justify-content: space-between;
 
+      button {
+        border: unset;
+        background: unset;
+      }
+
       figure {
         figcaption {
           padding-left: 2.4rem;
