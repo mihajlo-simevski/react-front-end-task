@@ -67,7 +67,7 @@ export default function SubjectTemplate({
     setEditedText(e.target.value);
   };
 
-  const handleKeyPress = (e: React. KeyboardEvent<HTMLElement>) => {
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLElement>) => {
     if (e.key === 'Enter') {
       (e.target as HTMLElement).blur();
     }
@@ -99,11 +99,22 @@ export default function SubjectTemplate({
             <div>
               <img src={RectangleIcon} alt="rectangle icon" />
               {isEditing ? (
-                <H1Input type="text" autoFocus value={editedText} onBlur={handleInputBlur} onChange={handleInputChange} onKeyUp={handleKeyPress} />
-              ) : <h2>{subjectTitle}</h2>}
-              <button type="button" onClick={handleEditIconClick}>
-                <img src={EditIcon} alt="edit icon" />
-              </button>
+                <H1Input
+                  type="text"
+                  autoFocus
+                  value={editedText}
+                  onBlur={handleInputBlur}
+                  onChange={handleInputChange}
+                  onKeyUp={handleKeyPress}
+                />
+              ) : (
+                <>
+                  <h2>{subjectTitle}</h2>
+                  <button type="button" onClick={handleEditIconClick}>
+                    <img src={EditIcon} alt="edit icon" />
+                  </button>
+                </>
+              )}
             </div>
           </figure>
           <div className="option">

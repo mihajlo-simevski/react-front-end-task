@@ -14,7 +14,6 @@ interface SubjectTemplateItem {
 type SubjectTemplateState = Array<SubjectTemplateItem>;
 
 export type RootState = {
-  // Add other slices here if you have more slices in your store
   subjectTemplate: SubjectTemplateState;
 };
 
@@ -77,18 +76,14 @@ const subjectTemplateSlice = createSlice({
   reducers: {
     updateSubjectTemplateItem: (
       state,
-      action: PayloadAction<SubjectTemplateItem>
+      action: PayloadAction<{id: number; newItem: SubjectTemplateItem}>
     ) => {
-      const updatedItem = action.payload;
-      const itemIndex = state.findIndex((item) => item.id === updatedItem.id);
-      if (itemIndex !== -1) {
-        return {
-          ...state.slice(0, itemIndex),
-          updatedItem,
-          ...state.slice(itemIndex + 1),
-        };
+      const { id, newItem } = action.payload;
+      const index = state.findIndex((item) => item.id === id);
+      if (index !== -1) {
+        // eslint-disable-next-line no-param-reassign
+        state[index] = newItem;
       }
-      return state;
     },
     updateHeader: (
       state,
