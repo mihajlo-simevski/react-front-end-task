@@ -1,13 +1,18 @@
+import H1Input from '@mui/joy/Input';
+import { SetStateAction, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import ChangeIcon from '../../assets/icons/change-icon.svg';
 import EditIcon from '../../assets/icons/edit-icon.svg';
 import OptionIcon from '../../assets/icons/option-icon.svg';
 import PlusIcon from '../../assets/icons/plus-icon.svg';
 import RectangleIcon from '../../assets/icons/rectangle-icon.svg';
+import { updateHeader } from '../../store/subjectTemplateSlice';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
 import SpeakerItem from '../SpeakerItem/SpeakerItem';
 import SwitchField from '../SwitchField/SwitchField';
 import TextArea from '../TextArea/TextArea';
+
 import './SubjectTemplate.scss';
 
 type SubjectTemplateChildProps = {
@@ -20,6 +25,7 @@ type SubjectTemplateChildProps = {
     subjectTitle?: string;
     description?: string;
     speakers?: {
+      id: number;
       name: string;
       url: string;
     }[];
@@ -28,6 +34,7 @@ type SubjectTemplateChildProps = {
 
 export default function SubjectTemplate({
   data: {
+    id,
     startTime,
     endTime,
     requiredAttendance,
@@ -36,6 +43,36 @@ export default function SubjectTemplate({
     speakers,
   },
 }: SubjectTemplateChildProps) {
+  const dispatch = useDispatch();
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedText, setEditedText] = useState('');
+
+  const handleEditIconClick = () => {
+    setIsEditing(true);
+  };
+
+  const handleInputBlur = () => {
+    setIsEditing(false);
+    dispatch(
+      updateHeader({
+        id,
+        subjectTitle: editedText,
+      })
+    );
+  };
+
+  const handleInputChange = (e: {
+    target: { value: SetStateAction<string> };
+  }) => {
+    setEditedText(e.target.value);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLElement>) => {
+    if (e.key === 'Enter') {
+      (e.target as HTMLElement).blur();
+    }
+  };
+
   return (
     <section className="SubjectTemplate">
       <div className="subject-wrapper">
@@ -61,8 +98,23 @@ export default function SubjectTemplate({
             <figcaption>Subject title</figcaption>
             <div>
               <img src={RectangleIcon} alt="rectangle icon" />
-              <h2>{subjectTitle}</h2>
-              <img src={EditIcon} alt="edit icon" />
+              {isEditing ? (
+                <H1Input
+                  type="text"
+                  autoFocus
+                  value={editedText}
+                  onBlur={handleInputBlur}
+                  onChange={handleInputChange}
+                  onKeyUp={handleKeyPress}
+                />
+              ) : (
+                <>
+                  <h2>{subjectTitle}</h2>
+                  <button type="button" onClick={handleEditIconClick}>
+                    <img src={EditIcon} alt="edit icon" />
+                  </button>
+                </>
+              )}
             </div>
           </figure>
           <div className="option">
@@ -83,7 +135,9 @@ export default function SubjectTemplate({
         <div className="subject-speakers">
           <h2>Speaker(s)</h2>
           <div className="list-of-speakers">
-            {speakers?.map((speaker) => <SpeakerItem speaker={speaker} />)}
+            {speakers?.map((speaker) => (
+              <SpeakerItem key={speaker.id} speaker={speaker} />
+            ))}
             <div className="button-wrapper">
               <Button variant="secondary" type="button">
                 <img src={PlusIcon} alt="plus icon" />

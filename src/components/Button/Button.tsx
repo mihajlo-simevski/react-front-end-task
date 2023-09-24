@@ -11,12 +11,13 @@ function Button({
   children,
   variant = 'primary',
   type = 'button',
+  onClick,
 }: ButtonProps) {
   const classNames = `btn ${variant}`;
 
   return (
     <div className="Button">
-      <button type={type ? 'button' : 'submit'} className={classNames}>
+      <button type={type ? 'button' : 'submit'} className={classNames} onClick={onClick}>
         {children}
       </button>
     </div>
