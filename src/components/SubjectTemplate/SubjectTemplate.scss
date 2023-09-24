@@ -109,6 +109,31 @@ $background-image: url('../../assets/images/subject-cover.png');
       }
     }
 
+    .subject-speakers {
+      .list-of-speakers {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: space-between;
+      }
+      .button-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 49%;
+        box-sizing: border-box;
+        padding: 0.2rem 1rem;
+        border: 0.1rem solid #e0e2e8;
+        border-radius: 0.5rem;
+
+        @media screen and (#{$tablet-down}) {
+          max-width: 94%;
+          box-sizing: border-box;
+        }
+      }
+    }
+
     @media screen and (#{$tablet-up}) {
       max-width: 63rem;
     }

@@ -1,9 +1,11 @@
 import ChangeIcon from '../../assets/icons/change-icon.svg';
 import EditIcon from '../../assets/icons/edit-icon.svg';
 import OptionIcon from '../../assets/icons/option-icon.svg';
+import PlusIcon from '../../assets/icons/plus-icon.svg';
 import RectangleIcon from '../../assets/icons/rectangle-icon.svg';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
+import SpeakerItem from '../SpeakerItem/SpeakerItem';
 import SwitchField from '../SwitchField/SwitchField';
 import TextArea from '../TextArea/TextArea';
 import './SubjectTemplate.scss';
@@ -46,6 +48,21 @@ export default function SubjectTemplate() {
         </div>
         <div>
           <TextArea label="Subject description" placeholder="" />
+        </div>
+        <div className="subject-speakers">
+          <h2>Speaker(s)</h2>
+          <div className="list-of-speakers">
+            <SpeakerItem />
+            <SpeakerItem />
+            <SpeakerItem />
+            <SpeakerItem />
+            <div className="button-wrapper">
+              <Button variant="secondary" type="button">
+                <img src={PlusIcon} alt="plus icon" />
+                Add a subject here
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
