@@ -1,14 +1,20 @@
-import AnnaAvatar from '../../assets/images/anna-smith_avatar.png';
 import WriteIcon from '../../assets/icons/write-icon.svg';
 
 import './SpeakerItem.scss';
 
-export default function SpeakerItem() {
+type SpeakerItemChildProps = {
+  speaker: {
+    name: string;
+    url: string;
+  };
+};
+
+export default function SpeakerItem({ speaker: { name, url } }: SpeakerItemChildProps) {
   return (
     <div className="SpeakerItem">
       <div className="speaker-info">
-        <img src={AnnaAvatar} alt="avatar" />
-        <p>Anna Smith</p>
+        <img src={url} alt="avatar" />
+        <p>{name}</p>
       </div>
       <div className="speaker-edit">
         <span className="subject-theme-circle" />

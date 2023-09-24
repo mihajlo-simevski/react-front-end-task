@@ -11,8 +11,12 @@ import LinkIcon from '../../assets/icons/link-icon.svg';
 
 import './SwitchField.scss';
 
-export default function SwitchField() {
-  const [expanded, setExpanded] = useState(false);
+type SwitchFieldProps = {
+  requiredAttendance: boolean | undefined;
+};
+
+export default function SwitchField({ requiredAttendance }: SwitchFieldProps) {
+  const [expanded, setExpanded] = useState(requiredAttendance);
 
   const toggleAccordion = () => {
     setExpanded((prevExpanded) => !prevExpanded);
@@ -31,7 +35,7 @@ export default function SwitchField() {
           aria-controls="custom-accordion-content"
           id="custom-accordion-header"
         >
-          <Switch onClick={toggleAccordion} />
+          <Switch checked={expanded} onClick={toggleAccordion} />
           <p style={paragraphColor}>Required attendance</p>
         </AccordionSummary>
         <AccordionDetails>

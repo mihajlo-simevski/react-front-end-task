@@ -3,7 +3,7 @@ import Button from '../Button/Button';
 
 import './SubjectCreator.scss';
 
-interface SubjectCreatorChildProps {
+type SubjectCreatorChildProps = {
   data: {
     id: number;
     template: string;
